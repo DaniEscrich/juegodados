@@ -69,11 +69,13 @@ class Juego:
                 print(f"{self.__jugador3}: {ptsTirada1} {ptsTirada2} {ptsTirada3} ({(ptsTirada1 + ptsTirada2 + ptsTirada3)}) \n")
 
     def mostrar(self):
-        print(f"Resultados: \n Jugador 1: {self.__jugador1} \n Jugador 2: {self.__jugador2}\n Numero de lanzamientos: {self.__lanzamientos} ")
-        print(f"Dados: {self.dado1.getCaras()},{self.dado2.getCaras()} y {self.dado3.getCaras()} \n Puntos jugador 1: {self.resultado1} \n Puntos jugador 2: {self.resultado2}")
-        if self.resultado1 > self.resultado2:
+        print(f"Resultados: \n Jugador 1: {self.__jugador1} \n Jugador 2: {self.__jugador2} \n Jugador 3: {self.__jugador3} \n Numero de lanzamientos: {self.__lanzamientos} ")
+        print(f"Dados: {self.dado1.getCaras()},{self.dado2.getCaras()} y {self.dado3.getCaras()} \n Puntos jugador 1: {self.resultado1} \n Puntos jugador 2: {self.resultado2} \n Puntos jugador 3: {self.resultado3}")
+        if self.resultado1 > self.resultado2 and self.resultado1 > self.resultado3:
             print(f"El GANADOR es {self.__jugador1} con {self.resultado1} puntos")
-        elif self.resultado1 == self.resultado2:
-            print("Ha habido un EMPATE")
-        else:
+        elif self.resultado2 > self.resultado1 and self.resultado2 > self.resultado3:
             print(f"El GANADOR es {self.__jugador2} con {self.resultado2} puntos")
+        elif self.resultado3 > self.resultado1 and self.resultado3 > self.resultado2:
+            print(f"El GANADOR es {self.__jugador3} con {self.resultado3} puntos")
+        else:
+            print(f"EMPATEE!!!")
