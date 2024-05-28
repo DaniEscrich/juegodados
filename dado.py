@@ -1,3 +1,6 @@
+import random
+
+
 class Dado:
     __caras = 6
 
@@ -5,7 +8,6 @@ class Dado:
         self.setCaras(fcaras)
 
     def lanzar(self):
-        import random
         return random.randint(1, self.__caras)
 
     def getCaras(self):
@@ -16,4 +18,4 @@ class Dado:
         if fcaras in caras_permitidas:
             self.__caras = fcaras
         else:
-            raise Exception("Numero de caras incorrecto"   )
+            raise Exception("Numero de caras incorrecto")
