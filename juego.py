@@ -30,8 +30,8 @@ class Juego:
             self.__jugador2 = fjugador2
 
     def set_lanzamientos(self, lanzamientos):
-        if not 2 < lanzamientos < 100:
-            raise Exception("El número de lanzamientos debe de estar entre 2 y 100")
+        if not 2 < lanzamientos <= 1000:
+            raise Exception("El número de lanzamientos debe de estar entre 2 y 1000")
         else:
             self.__lanzamientos = lanzamientos
 

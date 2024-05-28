@@ -14,7 +14,7 @@ class Dado:
         return self.__caras
 
     def setCaras(self, fcaras):
-        caras_permitidas = [4, 6, 8, 10, 12, 20, 120]
+        caras_permitidas = [4, 6, 8, 10, 12, 20, 120,200,300]
         if fcaras in caras_permitidas:
             self.__caras = fcaras
         else:
