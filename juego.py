@@ -7,6 +7,7 @@ class Juego:
     __lanzamientos = 0
 
     def __init__(self, jugador1, jugador2, caras1, caras2, caras3, caras4, lanzamientos, intermedios):
+
         self.set_jugador1(jugador1)
         self.set_jugador2(jugador2)
         self.set_lanzamientos(lanzamientos)
@@ -17,6 +18,9 @@ class Juego:
         self.__intermedios = (intermedios in ("S", "s"))
         self.resultado1 = 0
         self.resultado2 = 0
+
+        if (caras1 == caras2 or caras1 == caras3 or caras1 == caras4 or caras2 == caras3 or caras2 == caras4 or caras3 == caras4):
+                raise Exception ("Error caras iguales")
 
     def set_jugador1(self, fjugador1):
         if len(fjugador1) > 20:
@@ -36,7 +40,10 @@ class Juego:
         else:
             self.__lanzamientos = lanzamientos
 
+
+
     def jugar(self):
+
         self.resultado1 = 0
         self.resultado2 = 0
         for x in range(self.__lanzamientos):
